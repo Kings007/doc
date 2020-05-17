@@ -76,6 +76,18 @@ module.exports = {
           }
         ]
       },
+      // 处理字体模块
+      {
+        test: /\.mp4$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: 'video/[name][contenthash:8].[ext]',
+            }
+          }
+        ]
+      },
       // 以上为基础模块处理， 以下可配置特殊loder。如 vue-loader/less-loader/stylus-loader
     ]
   },
